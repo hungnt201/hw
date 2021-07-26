@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.body-1 {
+    background-color: #fbfbe4
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.form-list-1 {
+    height: 37px;
+    width: 130px;
+}
+
+.form-search {
+    padding: 20px;
+    font-size: 20px;
+    position: fixed;
+    top: 60px;
+    left: 300px;
+}
+
+.form-control-1 {
+    display: block;
+    width: 500px;
+    font-family: font-family;
+    background-clip: padding-box;
+}
+
+.gps-1 {
+    padding: 30px;
+    position: fixed;
+    top: -10px;
+    left: 290px;
+}
+
+.hotline {
+    position: fixed;
+    top: 10px;
+    left: 800px;
+}
+
+.nav-item:hover {
+    background-color: white;
+}
+
+.nav-link:hover {
+    color: unset;
+}
+
+.color-1 {
+    color: #FFF !important;
+}
+
+.color-1:hover {
+    color: #F00 !important;
+}
+
+.brand-1 {
+    font-size: 1rem !important;
+    margin-left: 6rem !important;
+    margin-right: 6rem !important;
+}
+
+.nav-pills {
+    background-color: #f68d45;
+    margin-right: 60px;
+    margin-left: 60px;
+    border-radius: 5px;
+}
+
+.slide-size {
+    padding-top: 10px;
+    width: 1200px !important;
+    padding-left: 100px !important;
+}
