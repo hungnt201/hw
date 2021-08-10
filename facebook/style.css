@@ -1,0 +1,373 @@
+* {
+    outline: none;
+}
+
+.td {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+main {
+    background-color: #e9ebee;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+
+/* thanh trên */
+
+#main-content {
+    padding: 55px 0px 0px 55px;
+    background-color: #18191A;
+}
+
+#l-col,
+#m-col {
+    vertical-align: top;
+}
+
+#l-col {
+    width: 340px;
+    padding-top: 6px;
+}
+
+
+/* thanh bên  */
+
+.l-cnt {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 3px 3px #ddd;
+    position: static;
+}
+
+.l-mrg {
+    margin-top: 28px;
+}
+
+.l-i {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 2px;
+    background-size: auto;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.cnt-label {
+    position: static;
+    padding-right: 24px;
+    margin-bottom: 15px;
+}
+
+.cnt-label span {
+    position: static;
+    top: 2px;
+    color: #707070;
+    font-size: 18px;
+}
+
+#m-col {
+    padding: 0px 55px;
+}
+
+.m-mrg {
+    margin-bottom: 28px;
+}
+
+
+/* thanh trên */
+
+#p-tabs {
+    position: relative;
+    font-size: 13px;
+    color: #919191;
+    text-align: center;
+    padding: 13px 20px;
+    margin-top: -64px;
+    background-color: #fff;
+    box-shadow: 0px 3px 3px #ddd;
+    z-index: 3;
+}
+
+#p-tabs-m .td {
+    width: 16.6666667%;
+    cursor: pointer;
+}
+
+#p-tabs-m .td.active {
+    color: #ee6000;
+}
+
+#p-tabs-m span {
+    position: relative;
+}
+
+#p-tabs-m .td.active span:after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: -13px;
+    height: 4px;
+    background-color: #ee6000;
+}
+
+#p-tabs-m .td i {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+#p-tab-m {
+    width: 1px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+#p-tab-m i {
+    margin-right: -4px;
+}
+
+
+/* phần giữa story */
+
+.story-main {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.story {
+    flex-basis: 16%;
+    padding-top: 30%;
+    position: relative;
+    background-image: url(./img/facebook.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.story img {
+    position: absolute;
+    width: 45px;
+    border-radius: 100%;
+    top: 10px;
+    left: 10px;
+    border: 3px solid #1876f2;
+}
+
+.story p {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 15;
+}
+
+
+/* phần giữa màu chữ trắng theo nền đen */
+
+.content {
+    color: #dee6eb;
+}
+
+
+/* phần giữa status */
+
+.status-main {
+    align-items: center;
+    background: #242526;
+    padding: 15px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+
+.status-input {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.status-input img {
+    width: 45px;
+    border-radius: 50%;
+}
+
+.status-input input {
+    width: 100%;
+    margin-left: 10px;
+    border-radius: 26px;
+    background-color: #3a3b3c;
+    color: white;
+}
+
+.methos-icon {
+    display: flex;
+    margin-top: 19px;
+    margin-left: 25px;
+    margin-bottom: 8px;
+}
+
+.methos {
+    display: flex;
+    flex-basis: 28%;
+    align-items: center;
+    margin: auto;
+}
+
+.methos i {
+    color: red;
+    font-size: 29px;
+    margin-right: 4px;
+}
+
+.methos h3 {
+    color: white;
+}
+
+
+/* phần giữa  họp mặt */
+
+.room-meet-online {
+    display: flex;
+    padding: 15px;
+    border-radius: 16px;
+    background: #242526;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: space-around;
+}
+
+.room-meet-online img {
+    width: 45px;
+    border-radius: 50%;
+}
+
+.creat-meet {
+    /* flex-basis: 22%; */
+    display: flex;
+    margin-right: 5px;
+    /* margin-left: 15px; */
+    border-radius: 16px solid #ccc;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.creat-meet i {
+    margin-right: 5px;
+    color: red;
+}
+
+.meet-avt {
+    margin: auto;
+}
+
+
+/* phần giữa */
+
+.post {
+    background: #242526;
+    border-radius: 16px;
+    /* padding: 14px;  */
+    margin-bottom: 20px;
+}
+
+.post .user-infor {
+    padding: 14px;
+}
+
+.status-user {
+    margin-left: 14px;
+    margin-bottom: 10px;
+}
+
+.post p {
+    font-size: 17px;
+}
+
+.user-infor {
+    display: flex;
+    align-items: center;
+}
+
+.user-infor img {
+    width: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-infor span {
+    font-size: 13px;
+    color: #9a9a9a;
+}
+
+.img-post img {
+    position: static;
+    width: 100%;
+}
+
+.img-post {
+    align-items: center;
+}
+
+.icon-react {
+    padding: 10px;
+}
+
+.icon-react hr {
+    margin-top: 10px;
+}
+
+.active-icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.active-icon i {
+    margin-left: 5px;
+    margin-right: 5px;
+    position: relative;
+    top: 17px;
+}
+
+.active-icon p {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.user-react {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.user-react img {
+    width: 25px;
+}
+
+.actionn-1 {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.actionn-1 img {
+    margin-right: 5px;
+}
+
+.active-infor {
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+/*  renew chạy thêm các bài bên dưới */
+
+.loading {
+    text-align: center;
+    padding: 40px 0px;
+}
