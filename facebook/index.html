@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>facebook</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
 </head>
 
 <body>
@@ -132,7 +134,7 @@
                         <!--phần bản tin post-->
 
 
-                        <!-- --------------post1---------------- -->
+                        <!-- --------------post---------------- -->
                         <div class="posts-main">
 
                             <div class="post">
@@ -156,18 +158,19 @@
                                             <p id="count">0</p>
                                         </div>
                                         <div class="active-infor">
-                                            <p>1242 bình luận</p>
+                                            <p>1 bình luận</p>
                                             <p>42 chia sẻ</p>
                                         </div>
                                     </div>
                                     <hr>
                                 </div>
+
                                 <div class="user-react">
                                     <div class="actionn-1">
-                                        <span id="iconlike">  <i class="far fa-thumbs-up" style="font-size: 25px;"></i></span>
+                                        <span id="iconlike">  <i class="far fa-thumbs-up" ></i></span>
                                         <p>Thích</p>
                                     </div>
-                                    <div class="actionn-1">
+                                    <div id="gen" onclick="genQuote()" class="actionn-1">
                                         <img src="./img/comments.png" alt="">
                                         <p>bình luận</p>
                                     </div>
@@ -176,13 +179,751 @@
                                         <p>chia sẻ</p>
                                     </div>
                                 </div>
+                                <div id="quote"></div>
+                            </div>
+
+                            <script>
+                                const likeBtn = document.querySelector(".actionn-1");
+                                let likeIcon = document.querySelector("#iconlike"),
+                                    count = document.querySelector("#count");
+
+                                let clicked = false;
+
+
+                                likeBtn.addEventListener("click", () => {
+                                    if (!clicked) {
+                                        clicked = true;
+                                        likeIcon.innerHTML = `<i class="fas fa-thumbs-up style="font-size: 25px;"></i>`;
+                                        count.textContent++;
+                                    } else {
+                                        clicked = false;
+                                        likeIcon.innerHTML = `<i class="far fa-thumbs-up style="font-size: 25px;"></i>`;
+                                        count.textContent--;
+                                    }
+                                });
+                            </script>
+
+                            <!-- --------------post1---------------- -->
+                            <div class="posts-main">
+
+                                <div class="post">
+                                    <div class="user-infor">
+                                        <img src="./img/user.jpg" alt="">
+                                        <div>
+                                            <p>Tuan Anh</p>
+                                            <span>11 giờ</span>
+                                        </div>
+                                    </div>
+                                    <p class="status-user"> </p>
+                                    <div class="img-post">
+                                        <img src="https://source.unsplash.com/random/300x200?sig=${age}+10" alt="">
+                                    </div>
+
+                                    <div class="icon-react">
+                                        <div class="active-icon">
+                                            <div class="active-infor">
+                                                <i class="far fa-thumbs-up"></i>
+
+                                                <p id="count1">4</p>
+                                            </div>
+                                            <div class="active-infor">
+                                                <p>1 bình luận</p>
+                                                <p>42 chia sẻ</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="user-react">
+                                        <div class="actionn-11">
+                                            <span id="iconlike1">  <i class="far fa-thumbs-up" ></i></span>
+                                            <p>Thích</p>
+                                        </div>
+                                        <div id="gen1" onclick="genQuote1()" class="actionn-1">
+                                            <img src="./img/comments.png" alt="">
+                                            <p>bình luận</p>
+                                        </div>
+                                        <div class="actionn-1">
+                                            <img src="./img/share.png" alt="">
+                                            <p>chia sẻ</p>
+                                        </div>
+                                    </div>
+                                    <div id="quote1"></div>
+                                </div>
+
+                                <script>
+                                    const likeBtn1 = document.querySelector(".actionn-11");
+                                    let likeIcon1 = document.querySelector("#iconlike1"),
+                                        count1 = document.querySelector("#count1");
+
+                                    let clicked1 = false;
+
+
+                                    likeBtn1.addEventListener("click", () => {
+                                        if (!clicked1) {
+                                            clicked1 = true;
+                                            likeIcon1.innerHTML = `<i class="fas fa-thumbs-up style="font-size: 25px;"></i>`;
+                                            count1.textContent++;
+                                        } else {
+                                            clicked1 = false;
+                                            likeIcon1.innerHTML = `<i class="far fa-thumbs-up style="font-size: 25px;"></i>`;
+                                            count1.textContent--;
+                                        }
+                                    });
+                                </script>
+                            </div>
+                            <!-- --------------post2---------------- -->
+                            <div class="posts-main">
+
+                                <div class="post">
+                                    <div class="user-infor">
+                                        <img src="./img/user.jpg" alt="">
+                                        <div>
+                                            <p>Tuan Anh</p>
+                                            <span>12 giờ</span>
+                                        </div>
+                                    </div>
+                                    <p class="status-user"></p>
+                                    <div class="img-post">
+                                        <img src="https://source.unsplash.com/random/300x200?sig=${age}+20" alt="">
+                                    </div>
+
+                                    <div class="icon-react">
+                                        <div class="active-icon">
+                                            <div class="active-infor">
+                                                <i class="far fa-thumbs-up"></i>
+
+                                                <p id="count2">3</p>
+                                            </div>
+                                            <div class="active-infor">
+                                                <p>1 bình luận</p>
+                                                <p>42 chia sẻ</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="user-react">
+                                        <div class="actionn-12">
+                                            <span id="iconlike2">  <i class="far fa-thumbs-up" ></i></span>
+                                            <p>Thích</p>
+                                        </div>
+                                        <div id="gen2" onclick="genQuote2()" class="actionn-1">
+                                            <img src="./img/comments.png" alt="">
+                                            <p>bình luận</p>
+                                        </div>
+                                        <div class="actionn-1">
+                                            <img src="./img/share.png" alt="">
+                                            <p>chia sẻ</p>
+                                        </div>
+                                    </div>
+                                    <div id="quote2"></div>
+                                </div>
+
+                                <script>
+                                    const likeBtn2 = document.querySelector(".actionn-12");
+                                    let likeIcon2 = document.querySelector("#iconlike2"),
+                                        count2 = document.querySelector("#count2");
+
+                                    let clicked2 = false;
+
+
+                                    likeBtn2.addEventListener("click", () => {
+                                        if (!clicked2) {
+                                            clicked2 = true;
+                                            likeIcon2.innerHTML = `<i class="fas fa-thumbs-up style="font-size: 25px;"></i>`;
+                                            count2.textContent++;
+                                        } else {
+                                            clicked2 = false;
+                                            likeIcon2.innerHTML = `<i class="far fa-thumbs-up style="font-size: 25px;"></i>`;
+                                            count2.textContent--;
+                                        }
+                                    });
+                                </script>
+                            </div>
+                            <!-- --------------post3---------------- -->
+                            <div class="posts-main">
+
+                                <div class="post">
+                                    <div class="user-infor">
+                                        <img src="./img/user.jpg" alt="">
+                                        <div>
+                                            <p>Tuan Anh</p>
+                                            <span>13 giờ</span>
+                                        </div>
+                                    </div>
+                                    <p class="status-user"> </p>
+                                    <div class="img-post">
+                                        <img src="https://source.unsplash.com/random/300x200?sig=${age}+30" alt="">
+                                    </div>
+
+                                    <div class="icon-react">
+                                        <div class="active-icon">
+                                            <div class="active-infor">
+                                                <i class="far fa-thumbs-up"></i>
+
+                                                <p id="count3">8</p>
+                                            </div>
+                                            <div class="active-infor">
+                                                <p>1 bình luận</p>
+                                                <p>42 chia sẻ</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="user-react">
+                                        <div class="actionn-13">
+                                            <span id="iconlike3">  <i class="far fa-thumbs-up" ></i></span>
+                                            <p>Thích</p>
+                                        </div>
+                                        <div id="gen3" onclick="genQuote3()" class="actionn-1">
+                                            <img src="./img/comments.png" alt="">
+                                            <p>bình luận</p>
+                                        </div>
+                                        <div class="actionn-1">
+                                            <img src="./img/share.png" alt="">
+                                            <p>chia sẻ</p>
+                                        </div>
+                                    </div>
+                                    <div id="quote3"></div>
+                                </div>
+
+                                <script>
+                                    const likeBtn3 = document.querySelector(".actionn-13");
+                                    let likeIcon3 = document.querySelector("#iconlike3"),
+                                        count3 = document.querySelector("#count3");
+
+                                    let clicked3 = false;
+
+
+                                    likeBtn3.addEventListener("click", () => {
+                                        if (!clicked3) {
+                                            clicked3 = true;
+                                            likeIcon3.innerHTML = `<i class="fas fa-thumbs-up style="font-size: 25px;"></i>`;
+                                            count3.textContent++;
+                                        } else {
+                                            clicked3 = false;
+                                            likeIcon3.innerHTML = `<i class="far fa-thumbs-up style="font-size: 25px;"></i>`;
+                                            count3.textContent--;
+                                        }
+                                    });
+                                </script>
+                            </div>
+                            <!-- --------------post4---------------- -->
+                            <div class="posts-main">
+
+                                <div class="post">
+                                    <div class="user-infor">
+                                        <img src="./img/user.jpg" alt="">
+                                        <div>
+                                            <p>Tuan Anh</p>
+                                            <span>14 giờ</span>
+                                        </div>
+                                    </div>
+                                    <p class="status-user"></p>
+                                    <div class="img-post">
+                                        <img src="https://source.unsplash.com/random/300x200?sig=${age}+40" alt="">
+                                    </div>
+
+                                    <div class="icon-react">
+                                        <div class="active-icon">
+                                            <div class="active-infor">
+                                                <i class="far fa-thumbs-up"></i>
+
+                                                <p id="count4">9</p>
+                                            </div>
+                                            <div class="active-infor">
+                                                <p>1 bình luận</p>
+                                                <p>42 chia sẻ</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="user-react">
+                                        <div class="actionn-14">
+                                            <span id="iconlike4">  <i class="far fa-thumbs-up" ></i></span>
+                                            <p>Thích</p>
+                                        </div>
+                                        <div id="gen4" onclick="genQuote4()" class="actionn-1">
+                                            <img src="./img/comments.png" alt="">
+                                            <p>bình luận</p>
+                                        </div>
+                                        <div class="actionn-1">
+                                            <img src="./img/share.png" alt="">
+                                            <p>chia sẻ</p>
+                                        </div>
+                                    </div>
+
+                                    <div id="quote4"></div>
+                                </div>
+
+                                <script>
+                                    const likeBtn4 = document.querySelector(".actionn-14");
+                                    let likeIcon4 = document.querySelector("#iconlike4"),
+                                        count4 = document.querySelector("#count4");
+
+                                    let clicked4 = false;
+
+
+                                    likeBtn4.addEventListener("click", () => {
+                                        if (!clicked4) {
+                                            clicked4 = true;
+                                            likeIcon4.innerHTML = `<i class="fas fa-thumbs-up style="font-size: 25px;"></i>`;
+                                            count4.textContent++;
+                                        } else {
+                                            clicked4 = false;
+                                            likeIcon4.innerHTML = `<i class="far fa-thumbs-up style="font-size: 25px;"></i>`;
+                                            count4.textContent--;
+                                        }
+                                    });
+                                </script>
+                            </div>
+                            <!-- --------------post5---------------- -->
+                            <div class="posts-main">
+
+                                <div class="post">
+                                    <div class="user-infor">
+                                        <img src="./img/user.jpg" alt="">
+                                        <div>
+                                            <p>Tuan Anh</p>
+                                            <span>15 giờ</span>
+                                        </div>
+                                    </div>
+                                    <p class="status-user"></p>
+                                    <div class="img-post">
+                                        <img src="https://source.unsplash.com/random/300x200?sig=${age}+50" alt="">
+                                    </div>
+
+                                    <div class="icon-react">
+                                        <div class="active-icon">
+                                            <div class="active-infor">
+                                                <i class="far fa-thumbs-up"></i>
+
+                                                <p id="count5">20</p>
+                                            </div>
+                                            <div class="active-infor">
+                                                <p>1 bình luận</p>
+                                                <p>42 chia sẻ</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="user-react">
+                                        <div class="actionn-15">
+                                            <span id="iconlike5">  <i class="far fa-thumbs-up" ></i></span>
+                                            <p>Thích</p>
+                                        </div>
+                                        <div id="gen5" onclick="genQuote5()" class="actionn-1">
+                                            <img src="./img/comments.png" alt="">
+                                            <p>bình luận</p>
+                                        </div>
+                                        <div class="actionn-1">
+                                            <img src="./img/share.png" alt="">
+                                            <p>chia sẻ</p>
+                                        </div>
+                                    </div>
+
+                                    <div id="quote5"></div>
+                                </div>
+
+                                <script>
+                                    const likeBtn5 = document.querySelector(".actionn-15");
+                                    let likeIcon5 = document.querySelector("#iconlike5"),
+                                        count5 = document.querySelector("#count5");
+
+                                    let clicked5 = false;
+
+
+                                    likeBtn5.addEventListener("click", () => {
+                                        if (!clicked5) {
+                                            clicked5 = true;
+                                            likeIcon5.innerHTML = `<i class="fas fa-thumbs-up style="font-size: 25px;"></i>`;
+                                            count5.textContent++;
+                                        } else {
+                                            clicked5 = false;
+                                            likeIcon5.innerHTML = `<i class="far fa-thumbs-up style="font-size: 25px;"></i>`;
+                                            count5.textContent--;
+                                        }
+                                    });
+                                </script>
+                            </div>
+                            <!-- --------------post6---------------- -->
+                            <div class="posts-main">
+
+                                <div class="post">
+                                    <div class="user-infor">
+                                        <img src="./img/user.jpg" alt="">
+                                        <div>
+                                            <p>Tuan Anh</p>
+                                            <span>16 giờ</span>
+                                        </div>
+                                    </div>
+                                    <p class="status-user"></p>
+                                    <div class="img-post">
+                                        <img src="https://source.unsplash.com/random/300x200?sig=${age}+60" alt="">
+                                    </div>
+
+                                    <div class="icon-react">
+                                        <div class="active-icon">
+                                            <div class="active-infor">
+                                                <i class="far fa-thumbs-up"></i>
+
+                                                <p id="count6">80</p>
+                                            </div>
+                                            <div class="active-infor">
+                                                <p>1 bình luận</p>
+                                                <p>42 chia sẻ</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="user-react">
+                                        <div class="actionn-16">
+                                            <span id="iconlike6">  <i class="far fa-thumbs-up" ></i></span>
+                                            <p>Thích</p>
+                                        </div>
+                                        <div id="gen6" onclick="genQuote6()" class="actionn-1">
+                                            <img src="./img/comments.png" alt="">
+                                            <p>bình luận</p>
+                                        </div>
+                                        <div class="actionn-1">
+                                            <img src="./img/share.png" alt="">
+                                            <p>chia sẻ</p>
+                                        </div>
+                                    </div>
+
+                                    <div id="quote6"></div>
+                                </div>
+
+                                <script>
+                                    const likeBtn6 = document.querySelector(".actionn-16");
+                                    let likeIcon6 = document.querySelector("#iconlike6"),
+                                        count6 = document.querySelector("#count6");
+
+                                    let clicked6 = false;
+
+
+                                    likeBtn6.addEventListener("click", () => {
+                                        if (!clicked6) {
+                                            clicked6 = true;
+                                            likeIcon6.innerHTML = `<i class="fas fa-thumbs-up style="font-size: 25px;"></i>`;
+                                            count6.textContent++;
+                                        } else {
+                                            clicked6 = false;
+                                            likeIcon6.innerHTML = `<i class="far fa-thumbs-up style="font-size: 25px;"></i>`;
+                                            count6.textContent--;
+                                        }
+                                    });
+                                </script>
+                            </div>
+                            <!-- --------------post7---------------- -->
+                            <div class="posts-main">
+
+                                <div class="post">
+                                    <div class="user-infor">
+                                        <img src="./img/user.jpg" alt="">
+                                        <div>
+                                            <p>Tuan Anh</p>
+                                            <span>17 giờ</span>
+                                        </div>
+                                    </div>
+                                    <p class="status-user"></p>
+                                    <div class="img-post">
+                                        <img src="https://source.unsplash.com/random/300x200?sig=${age}+70" alt="">
+                                    </div>
+
+                                    <div class="icon-react">
+                                        <div class="active-icon">
+                                            <div class="active-infor">
+                                                <i class="far fa-thumbs-up"></i>
+
+                                                <p id="count7">14</p>
+                                            </div>
+                                            <div class="active-infor">
+                                                <p>1 bình luận</p>
+                                                <p>42 chia sẻ</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="user-react">
+                                        <div class="actionn-17">
+                                            <span id="iconlike7">  <i class="far fa-thumbs-up" ></i></span>
+                                            <p>Thích</p>
+                                        </div>
+                                        <div id="gen7" onclick="genQuote7()" class="actionn-1">
+                                            <img src="./img/comments.png" alt="">
+                                            <p>bình luận</p>
+                                        </div>
+                                        <div class="actionn-1">
+                                            <img src="./img/share.png" alt="">
+                                            <p>chia sẻ</p>
+                                        </div>
+                                    </div>
+                                    <div id="quote7"></div>
+                                </div>
+
+                                <script>
+                                    const likeBtn7 = document.querySelector(".actionn-17");
+                                    let likeIcon7 = document.querySelector("#iconlike7"),
+                                        count7 = document.querySelector("#count7");
+
+                                    let clicked7 = false;
+
+
+                                    likeBtn7.addEventListener("click", () => {
+                                        if (!clicked7) {
+                                            clicked7 = true;
+                                            likeIcon7.innerHTML = `<i class="fas fa-thumbs-up style="font-size: 25px;"></i>`;
+                                            count7.textContent++;
+                                        } else {
+                                            clicked7 = false;
+                                            likeIcon7.innerHTML = `<i class="far fa-thumbs-up style="font-size: 25px;"></i>`;
+                                            count7.textContent--;
+                                        }
+                                    });
+                                </script>
+                            </div>
+                            <!-- --------------post8---------------- -->
+                            <div class="posts-main">
+
+                                <div class="post">
+                                    <div class="user-infor">
+                                        <img src="./img/user.jpg" alt="">
+                                        <div>
+                                            <p>Tuan Anh</p>
+                                            <span>19 giờ</span>
+                                        </div>
+                                    </div>
+                                    <p class="status-user"></p>
+                                    <div class="img-post">
+                                        <img src="https://source.unsplash.com/random/300x200?sig=${age}+80" alt="">
+                                    </div>
+
+                                    <div class="icon-react">
+                                        <div class="active-icon">
+                                            <div class="active-infor">
+                                                <i class="far fa-thumbs-up"></i>
+
+                                                <p id="count8">70</p>
+                                            </div>
+                                            <div class="active-infor">
+                                                <p>1 bình luận</p>
+                                                <p>42 chia sẻ</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="user-react">
+                                        <div class="actionn-18">
+                                            <span id="iconlike8">  <i class="far fa-thumbs-up" ></i></span>
+                                            <p>Thích</p>
+                                        </div>
+                                        <div id="gen8" onclick="genQuote8()" class="actionn-1">
+                                            <img src="./img/comments.png" alt="">
+                                            <p>bình luận</p>
+                                        </div>
+                                        <div class="actionn-1">
+                                            <img src="./img/share.png" alt="">
+                                            <p>chia sẻ</p>
+                                        </div>
+                                    </div>
+                                    <div id="quote8"></div>
+                                </div>
+
+                                <script>
+                                    const likeBtn8 = document.querySelector(".actionn-18");
+                                    let likeIcon8 = document.querySelector("#iconlike8"),
+                                        count8 = document.querySelector("#count8");
+
+                                    let clicked8 = false;
+
+
+                                    likeBtn8.addEventListener("click", () => {
+                                        if (!clicked8) {
+                                            clicked8 = true;
+                                            likeIcon8.innerHTML = `<i class="fas fa-thumbs-up style="font-size: 25px;"></i>`;
+                                            count8.textContent++;
+                                        } else {
+                                            clicked8 = false;
+                                            likeIcon8.innerHTML = `<i class="far fa-thumbs-up style="font-size: 25px;"></i>`;
+                                            count8.textContent--;
+                                        }
+                                    });
+                                </script>
+                            </div>
+                            <!-- --------------post9---------------- -->
+                            <div class="posts-main">
+
+                                <div class="post">
+                                    <div class="user-infor">
+                                        <img src="./img/user.jpg" alt="">
+                                        <div>
+                                            <p>Tuan Anh</p>
+                                            <span>19 giờ</span>
+                                        </div>
+                                    </div>
+                                    <p class="status-user"></p>
+                                    <div class="img-post">
+                                        <img src="https://source.unsplash.com/random/300x200?sig=${age}+90" alt="">
+                                    </div>
+
+                                    <div class="icon-react">
+                                        <div class="active-icon">
+                                            <div class="active-infor">
+                                                <i class="far fa-thumbs-up"></i>
+
+                                                <p id="count9">30</p>
+                                            </div>
+                                            <div class="active-infor">
+                                                <p>1 bình luận</p>
+                                                <p>42 chia sẻ</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="user-react">
+                                        <div class="actionn-19">
+                                            <span id="iconlike9">  <i class="far fa-thumbs-up" ></i></span>
+                                            <p>Thích</p>
+                                        </div>
+                                        <div id="gen9" onclick="genQuote9()" class="actionn-1">
+                                            <img src="./img/comments.png" alt="">
+                                            <p>bình luận</p>
+                                        </div>
+                                        <div class="actionn-1">
+                                            <img src="./img/share.png" alt="">
+                                            <p>chia sẻ</p>
+                                        </div>
+                                    </div>
+
+                                    <div id="quote9"></div>
+                                </div>
+
+                                <script>
+                                    const likeBtn9 = document.querySelector(".actionn-19");
+                                    let likeIcon9 = document.querySelector("#iconlike9"),
+                                        count9 = document.querySelector("#count9");
+
+                                    let clicked9 = false;
+
+
+                                    likeBtn9.addEventListener("click", () => {
+                                        if (!clicked9) {
+                                            clicked9 = true;
+                                            likeIcon9.innerHTML = `<i class="fas fa-thumbs-up style="font-size: 25px;"></i>`;
+                                            count9.textContent++;
+                                        } else {
+                                            clicked9 = false;
+                                            likeIcon9.innerHTML = `<i class="far fa-thumbs-up style="font-size: 25px;"></i>`;
+                                            count9.textContent--;
+                                        }
+                                    });
+                                </script>
                             </div>
 
 
 
-
+                            <!-- sinh ra post -->
+                            <div class="contentpost"></div>
 
                         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                     </div>
 
@@ -209,13 +950,12 @@
 
             </div>
         </div>
-        <div style="flex:0.33" class="widgets">
-            <div class="fb-page" data-href="https://www.facebook.com" data-tabs="timeline" data-width="500" data-height="1000" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>
-        </div>
-    </div>
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=917106662451039&autoLogAppEvents=1" nonce="aBDm9LaS"></script>
 
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
     <script src="./app.js"></script>
 </body>
 

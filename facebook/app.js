@@ -1,25 +1,3 @@
-// //nút like
-// const likeBtn = document.querySelector(".actionn-1");
-// let likeIcon = document.querySelector("#iconlike"),
-//     count = document.querySelector("#count");
-
-// let clicked = false;
-
-
-// likeBtn.addEventListener("click", () => {
-//     if (!clicked) {
-//         clicked = true;
-//         likeIcon.innerHTML = `<i class="fas fa-thumbs-up"></i>`;
-//         count.textContent++;
-//     } else {
-//         clicked = false;
-//         likeIcon.innerHTML = `<i class="far fa-thumbs-up"></i>`;
-//         count.textContent--;
-//     }
-// });
-
-
-
 //loading
 
 let page = 1;
@@ -62,6 +40,7 @@ const getData = async(page_no = 1) => {
 
     const { results } = data;
     populateUI(results);
+    console.log(populateUI);
 };
 
 
@@ -77,14 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
 handleLoad = () => {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - pixel_offset) {
         page = page + 1;
-        console.log("sinh ra số page " + page);
+
         if (page <= last_page) {
             window.removeEventListener('scroll', trottleHandler)
-            console.log("sinh ra số page " + page);
+
             getData(page)
                 .then((res) => {
                     window.addEventListener('scroll', trottleHandler)
-                    console.log("sinh ra số page " + page);
+
                 })
         }
     }
@@ -92,26 +71,26 @@ handleLoad = () => {
 
 
 
-
-
-
-
 const populateUI = data => {
-    const container = document.querySelector('.content');
+    const container1 = document.querySelector('.contentpost');
     data &&
         data.length &&
         data
         .map((each, index) => {
             const { name, picture, location, registered } = each;
+
             const { first } = name;
             const { large } = picture;
             const { date } = registered;
             const { age } = registered;
             const { postcode } = location;
+
             let link = postcode - age;
-            console.log(link);
-            container.innerHTML +=
+
+            container1.innerHTML +=
                 `
+                          
+
                 <div class="posts-main">
 
                 <div class="post">
@@ -132,7 +111,7 @@ const populateUI = data => {
                             <div class="active-infor">
                                 <i class="far fa-thumbs-up"></i>
 
-                                <p id="count">0</p>
+                                <p id="count">${age}</p>
                             </div>
                             <div class="active-infor">
                                 <p>1242 bình luận</p>
@@ -143,7 +122,9 @@ const populateUI = data => {
                     </div>
                     <div class="user-react">
                         <div class="actionn-1">
-                            <span id="iconlike">  <i class="far fa-thumbs-up" style="font-size: 25px;"></i></span>
+
+
+                        <span id="iconlike">  <i class="far fa-thumbs-up"></i></span>
                             <p>Thích</p>
                         </div>
                         <div class="actionn-1">
@@ -158,7 +139,209 @@ const populateUI = data => {
                 </div>
 
 
-    `
+
+
+
+
+                     `
         })
 
 }
+
+//comment
+function genQuote() {
+    let randNum = Math.floor(Math.random() * 8) + 1;
+    document.getElementById('quote').innerHTML = quotes[randNum];
+
+}
+
+
+let quotes = ["Blank",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/57.jpg\"><div><div id=\"commentchat\">Linnea<br>Are you on the net</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/83.jpg\"><div><div id=\"commentchat\">Josefina<br>I often chat online</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/90.jpg\"><div><div id=\"commentchat\">Benjamin<br>Do you often surf the internet?</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/34.jpg\"><div><div id=\"commentchat\">Irina<br>I have a desire to chat online in English.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/61.jpg\"><div><div id=\"commentchat\">Rose<br>I download movies and music from the net.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/85.jpg\"><div><div id=\"commentchat\">Jimmy<br>It’s just wasting time to chat online.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/21.jpg\"><div><div id=\"commentchat\">Giovanni<br>Most teenagers are fascinated by chatting online.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/66.jpg\"><div><div id=\"commentchat\">Clésio<br>You can get more information by surfing the internet.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+];
+
+
+//comment1
+function genQuote1() {
+    let randNum = Math.floor(Math.random() * 8) + 1;
+    document.getElementById('quote1').innerHTML = quotes1[randNum];
+
+}
+
+
+let quotes1 = ["Blank",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/57.jpg\"><div><div id=\"commentchat\">Linnea<br>Are you on the net</div> </div></div> <div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/83.jpg\"><div><div id=\"commentchat\">Josefina<br>I often chat online</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/90.jpg\"><div><div id=\"commentchat\">Benjamin<br>Do you often surf the internet?</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/34.jpg\"><div><div id=\"commentchat\">Irina<br>I have a desire to chat online in English.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/61.jpg\"><div><div id=\"commentchat\">Rose<br>I download movies and music from the net.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/85.jpg\"><div><div id=\"commentchat\">Jimmy<br>It’s just wasting time to chat online.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/21.jpg\"><div><div id=\"commentchat\">Giovanni<br>Most teenagers are fascinated by chatting online.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/66.jpg\"><div><div id=\"commentchat\">Clésio<br>You can get more information by surfing the internet.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+];
+
+//comment2
+function genQuote2() {
+    let randNum = Math.floor(Math.random() * 8) + 1;
+    document.getElementById('quote2').innerHTML = quotes2[randNum];
+
+}
+
+
+let quotes2 = ["Blank",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/57.jpg\"><div><div id=\"commentchat\">Linnea<br>Are you on the net</div> </div></div> <div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/83.jpg\"><div><div id=\"commentchat\">Josefina<br>I often chat online</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/90.jpg\"><div><div id=\"commentchat\">Benjamin<br>Do you often surf the internet?</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/34.jpg\"><div><div id=\"commentchat\">Irina<br>I have a desire to chat online in English.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/61.jpg\"><div><div id=\"commentchat\">Rose<br>I download movies and music from the net.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/85.jpg\"><div><div id=\"commentchat\">Jimmy<br>It’s just wasting time to chat online.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/21.jpg\"><div><div id=\"commentchat\">Giovanni<br>Most teenagers are fascinated by chatting online.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/66.jpg\"><div><div id=\"commentchat\">Clésio<br>You can get more information by surfing the internet.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+];
+
+
+//comment3
+function genQuote3() {
+    let randNum = Math.floor(Math.random() * 8) + 1;
+    document.getElementById('quote3').innerHTML = quotes3[randNum];
+
+}
+
+
+let quotes3 = ["Blank",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/57.jpg\"><div><div id=\"commentchat\">Linnea<br>Are you on the net</div> </div></div> <div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/83.jpg\"><div><div id=\"commentchat\">Josefina<br>I often chat online</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/90.jpg\"><div><div id=\"commentchat\">Benjamin<br>Do you often surf the internet?</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/34.jpg\"><div><div id=\"commentchat\">Irina<br>I have a desire to chat online in English.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/61.jpg\"><div><div id=\"commentchat\">Rose<br>I download movies and music from the net.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/85.jpg\"><div><div id=\"commentchat\">Jimmy<br>It’s just wasting time to chat online.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/21.jpg\"><div><div id=\"commentchat\">Giovanni<br>Most teenagers are fascinated by chatting online.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/66.jpg\"><div><div id=\"commentchat\">Clésio<br>You can get more information by surfing the internet.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+];
+
+
+//comment4
+function genQuote4() {
+    let randNum = Math.floor(Math.random() * 8) + 1;
+    document.getElementById('quote4').innerHTML = quotes4[randNum];
+
+}
+
+
+let quotes4 = ["Blank",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/57.jpg\"><div><div id=\"commentchat\">Linnea<br>Are you on the net</div> </div></div> <div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/83.jpg\"><div><div id=\"commentchat\">Josefina<br>I often chat online</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/90.jpg\"><div><div id=\"commentchat\">Benjamin<br>Do you often surf the internet?</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/34.jpg\"><div><div id=\"commentchat\">Irina<br>I have a desire to chat online in English.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/61.jpg\"><div><div id=\"commentchat\">Rose<br>I download movies and music from the net.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/85.jpg\"><div><div id=\"commentchat\">Jimmy<br>It’s just wasting time to chat online.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/21.jpg\"><div><div id=\"commentchat\">Giovanni<br>Most teenagers are fascinated by chatting online.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/66.jpg\"><div><div id=\"commentchat\">Clésio<br>You can get more information by surfing the internet.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+];
+
+
+//comment5
+function genQuote5() {
+    let randNum = Math.floor(Math.random() * 8) + 1;
+    document.getElementById('quote5').innerHTML = quotes5[randNum];
+
+}
+
+
+let quotes5 = ["Blank",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/57.jpg\"><div><div id=\"commentchat\">Linnea<br>Are you on the net</div> </div></div> <div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/83.jpg\"><div><div id=\"commentchat\">Josefina<br>I often chat online</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/90.jpg\"><div><div id=\"commentchat\">Benjamin<br>Do you often surf the internet?</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/34.jpg\"><div><div id=\"commentchat\">Irina<br>I have a desire to chat online in English.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/61.jpg\"><div><div id=\"commentchat\">Rose<br>I download movies and music from the net.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/85.jpg\"><div><div id=\"commentchat\">Jimmy<br>It’s just wasting time to chat online.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/21.jpg\"><div><div id=\"commentchat\">Giovanni<br>Most teenagers are fascinated by chatting online.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/66.jpg\"><div><div id=\"commentchat\">Clésio<br>You can get more information by surfing the internet.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+];
+
+
+//comment6
+function genQuote6() {
+    let randNum = Math.floor(Math.random() * 8) + 1;
+    document.getElementById('quote6').innerHTML = quotes6[randNum];
+
+}
+
+
+let quotes6 = ["Blank",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/57.jpg\"><div><div id=\"commentchat\">Linnea<br>Are you on the net</div> </div></div> <div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/83.jpg\"><div><div id=\"commentchat\">Josefina<br>I often chat online</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/90.jpg\"><div><div id=\"commentchat\">Benjamin<br>Do you often surf the internet?</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/34.jpg\"><div><div id=\"commentchat\">Irina<br>I have a desire to chat online in English.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/61.jpg\"><div><div id=\"commentchat\">Rose<br>I download movies and music from the net.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/85.jpg\"><div><div id=\"commentchat\">Jimmy<br>It’s just wasting time to chat online.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/21.jpg\"><div><div id=\"commentchat\">Giovanni<br>Most teenagers are fascinated by chatting online.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/66.jpg\"><div><div id=\"commentchat\">Clésio<br>You can get more information by surfing the internet.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+];
+
+
+//comment7
+function genQuote7() {
+    let randNum = Math.floor(Math.random() * 8) + 1;
+    document.getElementById('quote7').innerHTML = quotes7[randNum];
+
+}
+
+
+let quotes7 = ["Blank",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/57.jpg\"><div><div id=\"commentchat\">Linnea<br>Are you on the net</div> </div></div> <div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/83.jpg\"><div><div id=\"commentchat\">Josefina<br>I often chat online</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/90.jpg\"><div><div id=\"commentchat\">Benjamin<br>Do you often surf the internet?</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/34.jpg\"><div><div id=\"commentchat\">Irina<br>I have a desire to chat online in English.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/61.jpg\"><div><div id=\"commentchat\">Rose<br>I download movies and music from the net.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/85.jpg\"><div><div id=\"commentchat\">Jimmy<br>It’s just wasting time to chat online.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/21.jpg\"><div><div id=\"commentchat\">Giovanni<br>Most teenagers are fascinated by chatting online.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/66.jpg\"><div><div id=\"commentchat\">Clésio<br>You can get more information by surfing the internet.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+];
+
+
+//comment8
+function genQuote8() {
+    let randNum = Math.floor(Math.random() * 8) + 1;
+    document.getElementById('quote8').innerHTML = quotes8[randNum];
+
+}
+
+
+let quotes8 = ["Blank",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/57.jpg\"><div><div id=\"commentchat\">Linnea<br>Are you on the net</div> </div></div> <div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/83.jpg\"><div><div id=\"commentchat\">Josefina<br>I often chat online</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/90.jpg\"><div><div id=\"commentchat\">Benjamin<br>Do you often surf the internet?</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/34.jpg\"><div><div id=\"commentchat\">Irina<br>I have a desire to chat online in English.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/61.jpg\"><div><div id=\"commentchat\">Rose<br>I download movies and music from the net.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/85.jpg\"><div><div id=\"commentchat\">Jimmy<br>It’s just wasting time to chat online.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/21.jpg\"><div><div id=\"commentchat\">Giovanni<br>Most teenagers are fascinated by chatting online.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/66.jpg\"><div><div id=\"commentchat\">Clésio<br>You can get more information by surfing the internet.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+];
+
+
+//comment9
+function genQuote9() {
+    let randNum = Math.floor(Math.random() * 8) + 1;
+    document.getElementById('quote9').innerHTML = quotes9[randNum];
+
+}
+
+
+let quotes9 = ["Blank",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/57.jpg\"><div><div id=\"commentchat\">Linnea<br>Are you on the net</div> </div></div> <div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/83.jpg\"><div><div id=\"commentchat\">Josefina<br>I often chat online</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/90.jpg\"><div><div id=\"commentchat\">Benjamin<br>Do you often surf the internet?</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/34.jpg\"><div><div id=\"commentchat\">Irina<br>I have a desire to chat online in English.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/women/61.jpg\"><div><div id=\"commentchat\">Rose<br>I download movies and music from the net.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/85.jpg\"><div><div id=\"commentchat\">Jimmy<br>It’s just wasting time to chat online.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/21.jpg\"><div><div id=\"commentchat\">Giovanni<br>Most teenagers are fascinated by chatting online.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+    "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/66.jpg\"><div><div id=\"commentchat\">Clésio<br>You can get more information by surfing the internet.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
+];
