@@ -345,3 +345,30 @@ let quotes9 = ["Blank",
     "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/21.jpg\"><div><div id=\"commentchat\">Giovanni<br>Most teenagers are fascinated by chatting online.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
     "\<hr><div class=\"user-infor\"><img src=\"https://randomuser.me/api/portraits/men/66.jpg\"><div><div id=\"commentchat\">Clésio<br>You can get more information by surfing the internet.</div> </div></div><div class=\"status-input\"><img src=\"./img/user.jpg\"><input type=\"text\" placeholder=\"Viết bình luận công khai ...\"></div>",
 ];
+
+//left
+const listunder = document.getElementById("listunder");
+const seemore = document.getElementById("btn-seemore");
+const list1 = document.getElementById("list1");
+const anbot = document.getElementById("btn-anbot");
+seemore.onclick = function() {
+    listunder.classList.toggle("check");
+    seemore.remove();
+};
+anbot.onclick = function() {
+    listunder.classList.toggle("check");
+    list1.appendChild(seemore);
+};
+
+const listunder2 = document.getElementById("listunder2");
+const seemore2 = document.getElementById("seemore2");
+const anbot2 = document.getElementById("anbot2");
+const list2 = document.getElementById("list2");
+seemore2.onclick = function() {
+    listunder2.classList.toggle("check");
+    seemore2.remove();
+};
+anbot2.onclick = function() {
+    listunder2.classList.toggle("check");
+    list2.appendChild(seemore2);
+};

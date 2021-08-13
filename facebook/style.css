@@ -188,6 +188,7 @@ main {
 .status-input {
     display: flex;
     margin-bottom: 10px;
+    
 }
 
 .status-input img {
@@ -201,6 +202,7 @@ main {
     border-radius: 26px;
     background-color: #3a3b3c;
     color: white;
+    border: unset;
 }
 
 .methos-icon {
@@ -1145,6 +1147,51 @@ li {
     display: flex;
     align-items: center;
 }
+.actionn-1:hover{
+    cursor: pointer;
+}
+.actionn-11:hover {
+    background-color: #3A3B3C;
+    cursor: pointer;
+}
 
+.actionn-12:hover {
+    background-color: #3A3B3C;
+    cursor: pointer;
+}
 
+.actionn-13:hover {
+    background-color: #3A3B3C;
+    cursor: pointer;
+}
+
+.actionn-14:hover {
+    background-color: #3A3B3C;
+    cursor: pointer;
+}
+
+.actionn-15:hover {
+    background-color: #3A3B3C;
+    cursor: pointer;
+}
+
+.actionn-16:hover {
+    background-color: #3A3B3C;
+    cursor: pointer;
+}
+
+.actionn-17:hover {
+    background-color: #3A3B3C;
+    cursor: pointer;
+}
+
+.actionn-18:hover {
+    background-color: #3A3B3C;
+    cursor: pointer;
+}
+
+.actionn-19:hover {
+    background-color: #3A3B3C;
+    cursor: pointer;
+}
 /*  */

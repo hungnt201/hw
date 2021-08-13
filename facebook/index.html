@@ -10,10 +10,84 @@
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="./styleright.css">
+    <link rel="stylesheet" href="./style-left.css">
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
 </head>
 
 <body>
+    <div class="header">
+        <div class="header-1">
+            <div class="logo">
+                <img src="./logo.png" alt="Facebook">
+            </div>
+            <div class="search">
+                <form>
+                    <input class="search-input" type="search" placeholder="    Tìm kiếm trên Facebook" aria-label="Search">
+                </form>
+            </div>
+            <div class="home drop">
+                <div class="icon-home hover-1"><i class="fas fa-home"></i></div>
+                <div class="line"></div>
+                <div class="hover-icon drop-hover">Trang chủ</div>
+            </div>
+            <div class="page drop">
+                <div class="icon-page hover-1"><i class="far fa-flag"></i></div>
+                <div class="line-other"></div>
+                <div class="hover-icon drop-hover drop-hover-page">Trang</div>
+            </div>
+            <div class="video drop">
+                <div class="icon-video hover-1"><i class="far fa-play-circle"></i></div>
+                <div class="line-other"></div>
+                <div class="hover-icon drop-hover drop-hover-page">Watch</div>
+            </div>
+            <div class="group drop">
+                <div class="icon-group hover-1"><i class="fas fa-users-cog"></i></div>
+                <div class="line-other"></div>
+                <div class="hover-icon drop-hover drop-hover-page">Nhóm</div>
+            </div>
+            <div class="game drop">
+                <div class="icon-game hover-1"><i class="fas fa-chess-board"></i></div>
+                <div class="line-other"></div>
+                <div class="hover-icon drop-hover drop-hover-page">Game</div>
+            </div>
+        </div>
+        <div class="top-right">
+            <div class="avatar">
+                <div class="avt"><img src="./avt cat.jpg"></div>
+                <div class="name">Ky Anh</div>
+            </div>
+        </div>
+        <div class="top-right-1 drop">
+            <div class="menu-small hover-1">
+                <i class="fas fa-ellipsis-h"></i>
+            </div>
+            <div class="hover-icon drop-hover drop-hover-page drop-menu-small">Menu</div>
+        </div>
+        <div class="top-right-1 drop">
+            <div class="menu-small hover-1">
+                <i class="fab fa-facebook-messenger"></i>
+            </div>
+            <div class="hover-icon drop-hover drop-mess">Messenger</div>
+
+        </div>
+        <div class="top-right-1 drop">
+            <div class="menu-small hover-1">
+                <i class="fas fa-bell"></i>
+            </div>
+            <div class="hover-icon drop-hover drop-mess">Thông báo</div>
+
+        </div>
+        <div class="top-right-1 drop">
+            <div class="menu-small hover-1">
+                <i class="fas fa-caret-down"></i>
+            </div>
+            <div class="hover-icon drop-hover drop-mess">Tài khoản</div>
+
+        </div>
+    </div>
     <div>
 
 
@@ -21,22 +95,166 @@
         <div id="main-content">
             <div class="tb">
                 <div class="td" id="l-col">
-                    <div class="l-cnt">
+                    <!-- <div class="l-cnt">
                         <div class="cnt-label">
-                            <i class="l-i" id="l-i-i"></i>
-                            <span>test</span>
 
+
+                        </div>
+
+                    </div> -->
+
+                    <div class="container">
+                        <div class="leftbar" id="leftbar">
+                            <div class="userlist1" id="list1">
+                                <div class="list-a user-profile">
+                                    <img src="./img/user.jpg" alt="">
+                                    <p>Nguyen Anh</p>
+                                </div>
+                                <div class="list-a">
+                                    <img src="./icon-fb/icon_friend.png" alt="">
+                                    <p>Bạn bè</p>
+                                </div>
+                                <div class="list-a">
+                                    <img src="./icon-fb/group_1.png" alt="">
+                                    <p>Nhóm</p>
+                                </div>
+                                <div class="list-a">
+                                    <img src="./icon-fb/Messenger.png" alt="">
+                                    <p>Messenger</p>
+                                </div>
+                                <div class="list-a">
+                                    <img src="./icon-fb/R.png" alt="">
+                                    <p>kỉ niệm</p>
+                                </div>
+
+                                <div class="list-a seemore" id="btn-seemore">
+                                    <img src="./icon-fb/seemore.png" alt="">
+                                    <p>xem thêm</p>
+                                </div>
+                            </div>
+                            <div class="userlist1 list-under" id="listunder">
+                                <div class="list-a">
+                                    <img src="./icon-fb/R.png" alt="">
+                                    <p>đang cập nhật</p>
+                                </div>
+                                <div class="list-a">
+                                    <img src="./icon-fb/R.png" alt="">
+                                    <p>đang cập nhật</p>
+                                </div>
+                                <div class="list-a">
+                                    <img src="./icon-fb/R.png" alt="">
+                                    <p>đang cập nhật</p>
+                                </div>
+                                <div class="list-a">
+                                    <img src="./icon-fb/R.png" alt="">
+                                    <p>đang cập nhật</p>
+                                </div>
+                                <div class="list-a">
+                                    <img src="./icon-fb/R.png" alt="">
+                                    <p>đang cập nhật</p>
+                                </div>
+                                <div class="list-a">
+                                    <img src="./icon-fb/R.png" alt="">
+                                    <p>đang cập nhật</p>
+                                </div>
+                                <div class="list-a">
+                                    <img src="./icon-fb/R.png" alt="">
+                                    <p>đang cập nhật</p>
+                                </div>
+                                <div class="list-a seemore" id="btn-anbot">
+                                    <img src="./icon-fb/seemore.png" alt="">
+                                    <p>ẩn bớt</p>
+                                </div>
+                            </div>
+
+                            <hr>
+                            <div class="userlist1 userlist2" id="list2">
+                                <div class="loitat">
+                                    <p>Lối tắt của bạn</p>
+                                    <p class="setting-group">Chỉnh sửa</p>
+                                </div>
+                                <div class="list-a">
+                                    <img src="./icon-fb/img_group.jpg" alt="">
+                                    <p>Nhóm 1</p>
+                                </div>
+                                <div class="list-a">
+                                    <img src="./icon-fb/img_group.jpg" alt="">
+                                    <p>Nhóm 1</p>
+                                </div>
+                                <div class="list-a">
+                                    <img src="./icon-fb/img_group.jpg" alt="">
+                                    <p>Nhóm 1</p>
+                                </div>
+                                <div class="list-a">
+                                    <img src="./icon-fb/img_group.jpg" alt="">
+                                    <p>Nhóm 1</p>
+                                </div>
+                                <div class="list-a">
+                                    <img src="./icon-fb/img_group.jpg" alt="">
+                                    <p>Nhóm 1</p>
+                                </div>
+                                <div class="list-a seemore" id="seemore2">
+                                    <img src="./icon-fb/seemore.png" alt="">
+                                    <p>xem thêm</p>
+                                </div>
+                            </div>
+                            <div class="userlist1 userlist2 listunder2" id="listunder2">
+                                <div class="list-a">
+                                    <img src="./icon-fb/img_group.jpg" alt="">
+                                    <p>Nhóm 2</p>
+                                </div>
+                                <div class="list-a">
+                                    <img src="./icon-fb/img_group.jpg" alt="">
+                                    <p>Nhóm 2</p>
+                                </div>
+                                <div class="list-a " id="anbot2">
+                                    <img src="./icon-fb/seemore.png" alt="">
+                                    <p>ẩn bớt</p>
+                                </div>
+                            </div>
+                            <div class="footer">
+
+
+                                <div>Quyền riêng tư·Điều khoản·Quảng cáo·Lựa chọn quảng cáo Cookie· Facebook © 2021
+                                </div>
+
+
+                            </div>
                         </div>
 
                     </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 </div>
-                <div class="td" id="m-col">
-                    <div class="m-mrg" id="p-tabs">
+                <div class="td" id="m-col"> -->
+                    <!-- <div class="m-mrg" id="p-tabs">
                         <div class="tb">
                             <div class="td">
-                                head
+
+
                             </div>
                             <div class="td" id="p-tab-m"><i class="material-icons"></i></div>
                         </div>
@@ -50,7 +268,7 @@
 
 
 
-                    <!--bắt đầu phần giữa-->
+                <!--bắt đầu phần giữa-->
                     <div class="content">
                         <!--phần bản tin story-->
                         <div class="story-main">
@@ -937,23 +1155,269 @@
 
                 <!--thanh bên phải-->
                 <div class="td" id="l-col">
-                    <div class="l-cnt">
-                        <div class="cnt-label">
-                            <i class="l-i" id="l-i-i"></i>
-                            <span>test</span>
+                    <!-- <div class="l-cnt"> -->
+                    <!-- <div class="cnt-label"> -->
 
+                    <div class="content-right">
+                        <div class="add-friend">
+                            <div class="header-add-friend">
+                                <div class="icon-header-add-friend"><i class="fas fa-user-friends"></i></div>
+                                <div class="text-header-add-friend">
+                                    <p>Lời mời kết bạn</p>
+                                </div>
+                                <div class="menu-header-add-friend"><i class="fas fa-ellipsis-h"></i></div>
+                            </div>
+                            <div class="content-add-friend">
+                                <div class="avt-add-friend">
+                                    <img src="./avt-add-friend.jpg">
+                                </div>
+                                <div class="name-add-friend">
+                                    <div class="name-add-1">
+                                        <div class="name-1">Your Crush</div>
+                                        <div class="time-add">11 giờ</div>
+                                    </div>
+                                    <div class="acp">
+                                        Xác nhận
+                                    </div>
+                                    <div class="del">
+                                        Xóa
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <hr style="color: #3E4042;" width="265px" size="4" color="#3E4042">
+                        <div class="header-right">
+                            <div class="h-pp">Người liên hệ</div>
+                            <div class="video-call"><i class="fas fa-video"></i></div>
+                            <div class="search-right"><i class="fas fa-search"></i></div>
+                            <div class="dropdown">
+                                <button class="dropbtn" id="myBtn"><i class="fas fa-ellipsis-h"></i></button>
+                                <div class="dropdown-content" id="myDropdown">
+                                    <div class="set-chat">
+                                        <p class="text-set-chat">Cài đặt chat</p>
+                                        <p class="text-set-chat-1">Tùy chỉnh trải nghiệm trên Messenger.</p>
 
+                                    </div>
+                                    <hr style="color: #3E4042;" width="250px" size="4" color="#3E4042">
+                                    <div class="phone-sound">
+                                        <div class="icon-volumn"><i class="fas fa-phone"></i></div>
+                                        <div class="text-phone-sound">Âm thanh cuộc gọi</div>
+                                        <div class="icon-checkbox">
+                                            <div class="flatRoundedCheckbox">
+
+                                                <input type="checkbox" name="" id="flatOneRoundedCheckbox" value="1" checked>
+
+                                                <label for="flatOneRoundedCheckbox"></label>
+
+                                                <div></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="phone-sound">
+                                        <div class="icon-volumn"><i class="fas fa-volume-down"></i></div>
+                                        <div class="text-phone-sound">Âm thanh tin nhắn</div>
+                                        <div class="icon-checkbox">
+                                            <div class="flatRoundedCheckbox1">
+
+                                                <input type="checkbox" name="" id="flatOneRoundedCheckbox1" value="2">
+
+                                                <label for="flatOneRoundedCheckbox1"></label>
+
+                                                <div></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="phone-sound">
+                                        <div class="icon-volumn"><i class="fas fa-volume-down"></i></div>
+                                        <div class="text-phone-sound">Tin nhắn mới bật lên</div>
+                                        <div class="icon-checkbox">
+                                            <div class="flatRoundedCheckbox2">
+
+                                                <input type="checkbox" name="" id="flatOneRoundedCheckbox2" value="3" checked>
+
+                                                <label for="flatOneRoundedCheckbox2"></label>
+
+                                                <div></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr style="color: #3E4042;" width="250px" size="4" color="#3E4042">
+                                    <div class="phone-sound">
+                                        <div class="icon-volumn"><i class="fas fa-phone-square"></i></i>
+                                        </div>
+                                        <div class="text-phone-sound">Hiển thị danh bạ</div>
+                                        <div class="icon-checkbox">
+                                            <div class="flatRoundedCheckbox3">
+
+                                                <input type="checkbox" name="" id="flatOneRoundedCheckbox3" value="3" checked>
+
+                                                <label for="flatOneRoundedCheckbox3"></label>
+
+                                                <div></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr style="color: #3E4042;" width="250px" size="4" color="#3E4042">
+                                    <div class="end-menu">
+                                        <div class="icon-end-1"><i class="far fa-circle"></i></div>
+                                        <div class="text-end-1">Tắt trạng thái hoạt động</div>
+                                    </div>
+                                    <div class="end-menu">
+                                        <div class="icon-end-1"><i class="fas fa-envelope"></i></div>
+                                        <div class="text-end-1">Cài đặt gửi tin nhắn</div>
+                                    </div>
+                                    <div class="end-menu">
+                                        <div class="icon-end-1"><i class="fas fa-ban"></i></div>
+                                        <div class="text-end-1">Cài đặt chặn</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="people-contact">
+                            <div class="people-1">
+                                <div class="avt-people-contact"><img src="./avt cat.jpg"></div>
+                                <div class="ul-people-contact-1">
+                                    <ul>
+                                        <li class="li-people-contact-1">
+                                            <div class="name-people-contact-1">Nguyen Duong Ky Anh</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="people-2">
+                                <div class="avt-people-contact"><img src="./avt-2.jpg"></div>
+                                <div class="ul-people-contact-2">
+                                    <ul>
+                                        <li class="li-people-contact-2">
+                                            <div class="name-people-contact-2">Nguyen Hương Giang</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="people-2">
+                                <div class="avt-people-contact"><img src="./avt-3.jpg"></div>
+                                <div class="ul-people-contact-2">
+                                    <ul>
+                                        <li class="li-people-contact-2">
+                                            <div class="name-people-contact-2">Nguyen Thu Thảo</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="people-2">
+                                <div class="avt-people-contact"><img src="./avt-4.jpg"></div>
+                                <div class="ul-people-contact-2">
+                                    <ul>
+                                        <li class="li-people-contact-2">
+                                            <div class="name-people-contact-2">Nguyen Vũ Hoàng Vân</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="people-2">
+                                <div class="avt-people-contact"><img src="./avt-5.jpg"></div>
+                                <div class="ul-people-contact-2">
+                                    <ul>
+                                        <li class="li-people-contact-2">
+                                            <div class="name-people-contact-2">Bùi Minh Toàn</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="people-2">
+                                <div class="avt-people-contact"><img src="./avt-7.jpg"></div>
+                                <div class="ul-people-contact-2">
+                                    <ul>
+                                        <li class="li-people-contact-2">
+                                            <div class="name-people-contact-2">Kiều Hoàng Lân</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="people-2">
+                                <div class="avt-people-contact"><img src="./avt-8.jpg"></div>
+                                <div class="ul-people-contact-2">
+                                    <ul>
+                                        <li class="li-people-contact-2">
+                                            <div class="name-people-contact-2">Nguyễn Phúc</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="people-2">
+                                <div class="avt-people-contact"><img src="./avt-9.jpg"></div>
+                                <div class="ul-people-contact-2">
+                                    <ul>
+                                        <li class="li-people-contact-2">
+                                            <div class="name-people-contact-2">Nguyễn Trung Đức</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="people-2">
+                                <div class="avt-people-contact"><img src="./avt-10.jpg"></div>
+                                <div class="ul-people-contact-2">
+                                    <ul>
+                                        <li class="li-people-contact-2">
+                                            <div class="name-people-contact-2">Thành Đạt</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <hr style="color: #3E4042;" width="265px" size="4" color="#3E4042">
+                        <div class="group-contact">
+                            <div class="h1-gr-contact">Group chat</div>
+                        </div>
+                        <div class="people-2">
+                            <div class="avt-people-contact"><img src="./avt6.jpg"></div>
+                            <div class="ul-people-contact-2">
+                                <ul>
+                                    <li class="li-people-contact-2">
+                                        <div class="name-people-contact-2">Code the future f3.2</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="people-2 add-group">
+                            <div class="add-gr-icon"><i class="fas fa-plus"></i></div>
+                            <div class="ul-people-contact-2">
+                                <ul>
+                                    <li class="li-people-contact-2">
+                                        <div class="name-people-contact-2">Tạo nhóm mới</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="new-mess"><i class="fas fa-envelope-open-text"></i></div>
                     </div>
 
                 </div>
 
             </div>
+
         </div>
 
     </div>
+    </div>
 
+    </div>
 
+    <script>
+        // Get the button, and when the user clicks on it, execute myFunction
+        document.getElementById("myBtn").onclick = function() {
+            myFunction()
+        };
+
+        /* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
     <script src="./app.js"></script>
